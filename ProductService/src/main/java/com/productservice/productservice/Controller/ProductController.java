@@ -12,10 +12,14 @@ public class ProductController {
     private ProductService productService;
 
     //Constructor injection
+    //@Qualifier is used to explicitly specify what service implementation to choose
     @Autowired
     ProductController(@Qualifier("fakeStoreProductService") ProductService productService){
         this.productService = productService;
     }
+
+    //Path variable is used to parse the URL for a parameter
+    //in this case it is 'id' and pass it to the method.
     @GetMapping("/{id}")
     public String getProductById(@PathVariable("id") Long id){
         return productService.getProductById(id);
