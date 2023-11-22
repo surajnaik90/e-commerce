@@ -7,6 +7,7 @@ import com.productservice.productservice.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("/products")
@@ -27,8 +28,9 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
-    public void getAllProducts() {
-
+    @GetMapping
+    public List<GenericProductDTO> getAllProducts() {
+        return productService.getAllProducts();
     }
 
 
@@ -40,7 +42,7 @@ public class ProductController {
     public void deleteProductById(){
 
     }
-    public void createProduct(){
-
+    public GenericProductDTO createProduct(@RequestBody GenericProductDTO genericProductDTO){
+        return productService.createProduct(genericProductDTO);
     }
 }
