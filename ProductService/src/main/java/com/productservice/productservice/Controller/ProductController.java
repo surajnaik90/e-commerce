@@ -1,5 +1,7 @@
 package com.productservice.productservice.Controller;
 
+import com.productservice.productservice.DTO.FakeStoreProductDTO;
+import com.productservice.productservice.DTO.GenericProductDTO;
 import com.productservice.productservice.Services.FakeStoreProductService;
 import com.productservice.productservice.Services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +23,7 @@ public class ProductController {
     //Path variable is used to parse the URL for a parameter
     //in this case it is 'id' and pass it to the method.
     @GetMapping("/{id}")
-    public String getProductById(@PathVariable("id") Long id){
+    public GenericProductDTO getProductById(@PathVariable("id") Long id){
         return productService.getProductById(id);
     }
 

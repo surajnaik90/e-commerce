@@ -1,7 +1,10 @@
 package com.productservice.productservice.Services;
 
+import com.productservice.productservice.DTO.FakeStoreProductDTO;
+import com.productservice.productservice.DTO.GenericProductDTO;
+
 public interface ProductService {
-    String getProductById(Long id);
+    GenericProductDTO getProductById(Long id);
     void getAllProducts();
     void deleteProductById();
     void createProduct();
