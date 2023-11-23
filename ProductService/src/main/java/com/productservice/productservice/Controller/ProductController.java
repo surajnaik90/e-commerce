@@ -34,14 +34,17 @@ public class ProductController {
     }
 
 
+    @PutMapping
     public void updateProductById()
     {
 
     }
     @DeleteMapping("/{id}")
-    public void deleteProductById(){
-
+    public GenericProductDTO deleteProductById(Long id){
+        return productService.deleteProductById(id);
     }
+
+    @PostMapping
     public GenericProductDTO createProduct(@RequestBody GenericProductDTO genericProductDTO){
         return productService.createProduct(genericProductDTO);
     }
