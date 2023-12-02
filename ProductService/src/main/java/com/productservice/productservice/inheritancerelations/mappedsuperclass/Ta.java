@@ -1,10 +1,12 @@
 package com.productservice.productservice.inheritancerelations.mappedsuperclass;
 
+import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class ta extends User{
+@Entity(name = "ms_ta")
+public class Ta extends User{
     private String ta_session;
 }
