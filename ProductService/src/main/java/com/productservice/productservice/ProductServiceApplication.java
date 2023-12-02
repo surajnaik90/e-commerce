@@ -89,5 +89,7 @@ public class ProductServiceApplication implements CommandLineRunner {
 			throw new Exception("Price is empty");
 		}
 		priceRepository.deleteById(UUID.fromString(""));
+
+		productRepository.deleteById(UUID.fromString(""));
 	}
 }

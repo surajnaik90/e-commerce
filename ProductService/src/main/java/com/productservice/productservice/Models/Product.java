@@ -1,9 +1,6 @@
 package com.productservice.productservice.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +15,8 @@ public class Product extends BaseModel{
     @JoinColumn(nullable = false)
     private Category category;
 
-    @OneToOne(optional = false)
-    @JoinColumn(nullable = false) //Just for the business case it is OneToOne
+    //@OneToOne(optional = false, cascade = {CascadeType.REMOVE})
+    @OneToOne(optional = false, cascade = {CascadeType.REMOVE})
+    //@JoinColumn(nullable = false) //Just for the business case it is OneToOne
     private Price price;
 }
