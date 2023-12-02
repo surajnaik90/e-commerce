@@ -54,7 +54,6 @@ public class ProductController {
 
     @ExceptionHandler(ProductNotFoundException.class)
     private ExceptionDTO handleProductNotFoundException(ProductNotFoundException ex) {
-
         ExceptionDTO exceptionDTO = new ExceptionDTO();
         exceptionDTO.setMessage(ex.getMessage());
         exceptionDTO.setHttpStatus(HttpStatus.NOT_FOUND);
