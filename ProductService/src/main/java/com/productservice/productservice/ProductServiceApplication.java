@@ -111,7 +111,5 @@ public class ProductServiceApplication implements CommandLineRunner {
 		Optional<Category> optionalCategory = categoryRepository.findById(UUID.fromString(""));
 
 		Category category3 = optionalCategory.get();
-
-		List<Product> productList = productRepository.
 	}
 }
